@@ -1,0 +1,31 @@
+id;name;questionTypeId;options/0/id;options/0/questionId;options/0/name;options/0/isAnswer;options/1/id;options/1/questionId;options/1/name;options/1/isAnswer;options/2/id;options/2/questionId;options/2/name;options/2/isAnswer;options/3/id;options/3/questionId;options/3/name;options/3/isAnswer;options/4/id;options/4/questionId;options/4/name;options/4/isAnswer;options/5/id;options/5/questionId;options/5/name;options/54/isAnswer;options/6/id;options/6/questionId;options/6/name;options/64/isAnswer;questionType/id;questionType/name;questionType/isActive
+1010;The purpose of a Sprint is to have a working increment of product done before the Sprint Review.;1;1055;1010;TRUE;false;1056;1010;FALSE;true;;;;;;;;;;;;;;;;;;;;;1;Multiple Choice;true
+1011;Which of the following is NOT a Time-Box in Scrum? (choose as many as apply);1;1055;1010;Sprint Planning Meeting;false;1057;1010;Release Retrospective;false;1056;1010;Sprint Retrospective;true;1058;1010;Daily Scrum;false;1059;1010;Sprint Testing;false;1060;1010;Release Testing;false;1061;1010;Sprint 0;false;1;Multiple Choice;true
+1012;Which output from a Sprint Planning Meeting provides the Development Team with a target and overarching direction for the Sprint?;1;1055;1010;System.Web.UI.Page;true;1057;1010;System.Web.UI.Form;false;1056;1010;System.Web.GUI.Page;false;1058;1010;System.Web.Form;false;;;;;;;;;;;;;1;Multiple Choice;true
+1013;Which phrase best describes a product Owner?;1;1055;1010;Model View Controller;true;1057;1010;Maximum Virtual Control;false;1056;1010;Microsoft Visual Core;false;1058;1010;None of the above;false;;;;;;;;;;;;;1;Multiple Choice;true
+1014;The only person who can abnormally terminate a Sprint is?;1;1055;1010;Session;false;1057;1010;TempData;false;1056;1010;ViewData;false;1058;1010;ViewBag;true;;;;;;;;;;;;;1;Multiple Choice;true
+1015;When multiple Scrum Teams are working on the same project, they should make sure that each team has different Sprint start dates.;1;1055;1010;Init, PreRender, Load;false;1057;1010;Load, PreRender, Init;false;1056;1010;Init, Load, PreRender;true;1058;1010;None of the above;false;;;;;;;;;;;;;1;Multiple Choice;true
+1016;The Development Team has forecast an amount of Product Backlog items it thinks it can accomplish and a Sprint goal. Who determines how the development team accomplishes this work?;1;1055;1010;ObjectDataSource;false;1056;1010;LinqDataSource;true;1057;1010;SqlDataSource;false;1058;1010;XmlDataSource;false;;;;;;;;;;;;;1;Multiple Choice;true
+1017;Why is the Daily Scrum held at the same time and same place?;1;1055;1010;div;false;1056;1010;span;true;1057;1010;body;false;1058;1010;label;false;;;;;;;;;;;;;1;Multiple Choice;true
+1018;It is mandatory that the product increment be released to production at the end of each Sprint.;1;1055;1010;Session.Terminate();false;1057;1010;Session.TimeOut();false;1056;1010;Session.Abondon();true;1058;1010;Session.Kill();false;;;;;;;;;;;;;1;Multiple Choice;true
+1019;Which of the below are roles on a Scrum Team?;1;1055;1010;HttpContext;true;1056;1010;Session;false;1057;1010;Cookies;false;1058;1010;SqlServer;false;;;;;;;;;;;;;1;Multiple Choice;true
+1020;Who is required to attend the Daily Scrum?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1021;Drawing a trend line through a release burndown chart indicates?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1022;When should the Sprint Retrospectives be held?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1023;The maximum length of the Sprint Review (its timebox) is:;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1024;The three pillars of empirical process control are:;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1025;Upon what type of process control is Scrum based?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1026;When is a Sprint over?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1027;What does it mean to say that an event has a timebox?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1028;What is the main reason for the Scrum Master to be at the Daily Scrum?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1029;An organization has decided to adopt Scrum, but management wants to change the terminology to fit with terminology already used. What will likely happen if this is done?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1030;Which statement best describes Scrum?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1031;An abnormal termination of a Sprint is called when?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1032;"The CEO asks the Development Team to add a ""very important"" item to the current Sprint. What should the Development Team do?";1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1033;The Development Team should not be interrupted during the Sprint. The Sprint Goal should remain intact. These are conditions that foster creativity, quality and productivity. Based on this which of the following is false?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1034;Who is responsible for registering the work estimates during a Sprint?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1035;The Product Owner must ship or implement each Sprint increment.;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1036;What are the responsibilities of a tester in a Development Team (choose 2)?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1037;When does the next Sprint begin?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1038;During a Sprint a Development Team determines that it will not be able to finish the complete forecast Who should be present to review and adjust the Sprint work selected?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+1039;The timebox for a Daily Scrum is?;1;1055;1010;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

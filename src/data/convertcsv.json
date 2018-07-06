@@ -1,0 +1,1124 @@
+{
+  "id": 4,
+  "name": "Scrum Quiz",
+  "description": "Scrum",
+  "questions":[
+ {
+   "id": 1010,
+   "name": " The purpose of a Sprint is to have a working increment of product done before the Sprint Review.",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " True",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " False",
+         "isAnswer": true
+      }
+
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1011,
+   "name": " Which of the following is NOT a Time-Box in Scrum (choose 4)",
+   "questionTypeId": 0,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Sprint Planning Meeting",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Release Retrospective",
+         "isAnswer": true
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Sprint Retrospective",
+         "isAnswer": true
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Daily Scrum",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " Sprint Testing",
+         "isAnswer": true
+      },
+      {
+         "id": 1060,
+         "questionId": 1010,
+         "name": " Release Testing",
+         "isAnswer": true
+      },
+      {
+         "id": 1061,
+         "questionId": 1010,
+         "name": " Sprint 0",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1012,
+   "name": " Which output from a Sprint Planning Meeting provides the Development Team with a target and overarching direction for the Sprint",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The release plan.",
+         "isAnswer": true
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Sprint Backlog.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Sprint review minutes.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Sprint goal.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1013,
+   "name": " Which phrase best describes a product Owner",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Team manager",
+         "isAnswer": true
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Go-between between development team and customers",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Requirements engineer",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Value optimizer",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1014,
+   "name": " The only person who can abnormally terminate a Sprint is",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The Scrum Master",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Development Team or its members",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The Stakeholders",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Product Owner",
+         "isAnswer": true
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1015,
+   "name": " When multiple Scrum Teams are working on the same project, they should make sure that each team has different Sprint start dates",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " True",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " False",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": "0",
+         "isAnswer": true
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": "0",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1016,
+   "name": " The Development Team has forecast an amount of Product Backlog items it thinks it can accomplish and a Sprint goal",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The various functional managers that the Team members report to.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Development Team.",
+         "isAnswer": true
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Knowledgeable architects or managers.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Scrum Master. ",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1017,
+   "name": " Why is the Daily Scrum held at the same time and same place",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The place can be named.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The consistency reduces complexity and overhead.",
+         "isAnswer": true
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The Product Owner demands it.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Rooms are hard to book and this lets it be booked in advance.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1018,
+   "name": " It is mandatory that the product increment be released to production at the end of each Sprint",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": "true",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " False",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": "0",
+         "isAnswer": true
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": "0",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1019,
+   "name": " Which of the below are roles on a Scrum Team",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Development Team",
+         "isAnswer": true
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Users",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Customers",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Product Owner",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " Scrum Master",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1020,
+   "name": " Who is required to attend the Daily Scrum",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Scrum team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The Development Team and Scrum Master.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Development Team and Product Owner.",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " The Scrum Master and Product Owner.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1021,
+   "name": " Drawing a trend line through a release burndown chart indicates",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Cost of the project.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " When the work remaining will likely be completed if nothing changes on the backlog of the Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " When the project will be over if the Product Owner removes work that is equal in effort to any new work that is added.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " When all Sprint Backlog work will be completed and the Scrum Team will be released for other work.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1022,
+   "name": " When should the Sprint Retrospectives be held",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Only at the end of the last Sprint",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " At the end of each Sprint",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " In the middle of each Sprint",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " At the beginning of the last Sprint -",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1023,
+   "name": " The maximum length of the Sprint Review (its timebox) is:",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " 2 hours.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " 4 hours for a monthly Sprint. For shorter Sprints it is usually shorter.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " As long as needed.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " 1 day.",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " 4 hours and longer as needed.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1024,
+   "name": " The three pillars of empirical process control are:",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Respect For People, Kaizen, Eliminating Waste",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Planning, Demonstration, Retrospective",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Inspection, transparency, Adaptation",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Planning, Inspection, Adaptation",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " Transparency, Eliminating Waste, Kaizen",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1025,
+   "name": " Upon what type of process control is Scrum based",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Empirical",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Hybrid",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Defined",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Complex",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1026,
+   "name": " When is a Sprint over",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " When all Product Backlog items meet their definition of done.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " When the Product Owner says is done.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " When all the tasks are completed",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " When the timebox expires",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1027,
+   "name": " What does it mean to say that an event has a timebox",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The event must happen at a set time.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The event must happen by a given time.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The event must take at least a minimum amount of time.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The event can take no more than a maximum amount of time.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1028,
+   "name": " What is the main reason for the Scrum Master to be at the Daily Scrum",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " To make sure every team member answers the three questions in the right team member order.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " He or she does not have to be there; he or she only has to ensure the Development Team has a Daily Scrum.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " To write down any changes to the Sprint Backlog, including adding new items, and tracking progress on the burndown.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " To gather status and progress information to report to management.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1029,
+   "name": " An organization has decided to adopt Scrum, but management wants to change the terminology to fit with terminology already used",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Without a new vocabulary as a render of the change, very little change may actually happen.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The organization may not understand what has changed with Scrum and the benefits of Scrum may be lost.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Management may feel less anxious.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " All answers apply.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1030,
+   "name": " Which statement best describes Scrum",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " A complete methodology that defines how to develop software.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " A cookbook that defines best practices for software development.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " A framework within which complex products in complex environments are developed.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " A defined and predictive process that conforms to the principles of Scientific Management.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1031,
+   "name": " An abnormal termination of a Sprint is called when",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " When it is clear at the end of a Sprint that everything won't be finished.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " When the Team feels that the work is too hard.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " When Sales has an important opportunity.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " When the Product Owner determines that it makes no sense to finish it.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1032,
+   "name": " The CEO asks the Development Team to add a \"very important\" item to the current Sprint",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Add the item to the current Sprint without any adjustments.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Add the item to the current Sprint and drop an item of equal size.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Add the item to the next Sprint",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Inform the Product Owner so he/she can work with the CEO.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1033,
+   "name": " The Development Team should not be interrupted during the Sprint",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The Product Owner can help clarify or optimize the Sprint when asked by the Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Sprint Backlog and its contents are fully formulated in the Sprint Planning meeting and do not change during the Sprint. ",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " As a decomposition of the selected Product Backlog Items, the Sprint Backlog changes and may grow as the work emerges.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Development Team may work with the Product Owner to remove or add work if it finds it has more or less capacity than it expected.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1034,
+   "name": " Who is responsible for registering the work estimates during a Sprint",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Scrum Master.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The Product Owner.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The most junior member of the Team.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1035,
+   "name": " The Product Owner must ship or implement each Sprint increment",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Without exception.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " When it makes sense.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " Whenever the increment is free of defects.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " To make sure the Development Team is done every Sprint.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1036,
+   "name": " What are the responsibilities of a tester in a Development Team (choose 2)",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " everyone is responsible for quality in Scrum",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " checking the work of the developers",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " there is no specific tester role",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " finding bugs'",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1037,
+   "name": " When does the next Sprint begin",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " Next Monday.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Immediately following the next Sprint Planning.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " When the Product Owner is ready.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " Immediately after the conclusion of the previous Sprint.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1038,
+   "name": " During a Sprint a Development Team determines that it will not be able to finish the complete forecast Who should be present to review and adjust the Sprint work selected",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The Scrum Master, the project manager and the Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " The Product Owner and the Development Team.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " The Product Owner and all stakeholders.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " The Development Team.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+},
+ {
+   "id": 1039,
+   "name": " The timebox for a Daily Scrum is",
+   "questionTypeId": 1,
+   "options": [
+      {
+         "id": 1055,
+         "questionId": 1010,
+         "name": " The same time of day every day.",
+         "isAnswer": false
+      },
+      {
+         "id": 1056,
+         "questionId": 1010,
+         "name": " Two minutes per person.",
+         "isAnswer": false
+      },
+      {
+         "id": 1057,
+         "questionId": 1010,
+         "name": " 4 hours.",
+         "isAnswer": false
+      },
+      {
+         "id": 1058,
+         "questionId": 1010,
+         "name": " 15 minutes.",
+         "isAnswer": false
+      },
+      {
+         "id": 1059,
+         "questionId": 1010,
+         "name": " 15 minutes for a 4 week sprint. For shorter Sprints it is usually shorter.",
+         "isAnswer": false
+      }
+   ],
+   "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+   }
+}
+]
+}
