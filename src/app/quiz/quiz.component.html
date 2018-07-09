@@ -1,3 +1,8 @@
+
+
+
+
+
 <div class="row">
   <div class="col-6">
     <h3>Quiz Application</h3>
@@ -60,19 +65,14 @@
                 <tr>
                   <td>{{getCorrectCount()}}</td>
                   <td>{{getWrongCount()}}</td>
-                  {{setColor()}}
-                  <td *ngIf="isValid; else elseBlock" bgcolor='green'>{{getCorrectPercentage()}}</td>
-                    <ng-template #elseBlock>
-                        <td bgcolor='red'>{{getCorrectPercentage()}}</td>
-                    </ng-template>
+                  {{selectColor()}}
+                  <td bgcolor="color;">{{getCorrectPercentage()}}</td>
                   <td>
-                    <button class="btn btn-default" (click)="mode = 'quiz'">Restart Quiz</button>
+                    <button class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
                   </td>
                 </tr>
-
           </table>
         </div>
-
 
     <div *ngFor="let question of quiz.questions; let index = index">
 
@@ -80,7 +80,11 @@
         <h5>{{index + 1}}. {{question.name}}</h5>
         <div class="row">
           <div class="col-6" *ngFor="let Option of question.options">
-            <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" /> {{Option.name}}
+            <!-- <div class="p-1 m-2 alert {{Option.isAnswer ? 'alert-warning': 'alert-danger'}}"> -->
+
+            <div class="p-1 m-2 alert {{correctSelected(Option.isAnswer, Option.selected)}}">
+            <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected"/> {{Option.name}}
+            </div>
           </div>
         </div>
         <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}</div>

@@ -12,7 +12,10 @@ import { $, $$ } from 'protractor';
   providers: [QuizService]
 })
 export class QuizComponent implements OnInit {
+
+  color;
   isValid: boolean;
+  correctAnswer = true;
   correctAnswers = [];
   results = [];
   correctCount = 0;
@@ -109,38 +112,38 @@ export class QuizComponent implements OnInit {
   }
 
   isCorrect(question: Question) {
-
-
     return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
+  }
 
+  correctSelected(isAnswer: any, selected: any) {
+    // let isAnswer;
+    // let id;
+    // question.options.every(x => (id = x.id));
+    // question.options.every(x => (isAnswer = x.isAnswer));
+    // // console.log(question.options.every(x => x.isAnswer === true) ? 'correct' : 'wrong');
+        if (isAnswer && selected) {
+          return 'alert-success';
+        } else if (isAnswer === true && selected === false) {
+          return 'alert-warning';
+        } else if (isAnswer === false && selected === true) {
+          return 'alert-danger';
+        } else {
+          return 'alert-default';
+        }
+
+    // console.log(test);
+    // return question.options.every(x => x.isAnswer === this.correctAnswer) ? 'correct' : 'wrong';
   }
 
   onSubmit() {
-
     const answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
-
     // Post your data to the server here. answers contains the questionId and the users' answer.
     console.log(this.quiz.questions);
-
     this.quiz.questions.forEach(x => this.results.push(this.isCorrect(x)));
-
     this.results.forEach((x) => {if (x === 'correct')  {this.correctCount = this.correctCount + 1; } }) ;
     console.log(this.results);
-
-
-    // for (let i = 0; i < this.results.length ; i++) {
-    //   console.log(this.results[i]);
-    //   if (this.results[i] === 'correct') {
-    //     this.correctCount++;
-    //   }
-    // }
-
-
     this.mode = 'result';
-
-
-
   }
 
   getCorrectCount() {
@@ -150,7 +153,6 @@ export class QuizComponent implements OnInit {
   getWrongCount() {
     return this.results.length - this.correctCount;
   }
-
 
   getCorrectPercentage() {
     const correctPercentage = this.correctCount / this.results.length * 100;
@@ -164,5 +166,21 @@ export class QuizComponent implements OnInit {
     } else {
       this.isValid = false ;
     }
+  }
+
+  selectColor() {
+    const value = this.getCorrectPercentage();
+    if (value > 2) {
+      this.color = 'green';
+    } else {
+      this.color = 'red' ;
+    }
+  }
+
+  clearAll() {
+    this.correctCount = 0;
+    this.correctAnswers = [];
+    this.results = [];
+    this.loadQuiz(this.quizName);
   }
 }
