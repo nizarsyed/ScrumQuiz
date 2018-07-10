@@ -60,7 +60,7 @@
                 <tr>
                   <td style="text-align:center">{{getCorrectCount()}}</td>
                   <td style="text-align:center">{{getWrongCount()}}</td>
-                  <td style="text-align:center" class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" >{{getCorrectPercentage()}}</td>
+                  <td style="text-align:center" class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" >{{getCorrectPercentage()}} %</td>
                   <td style="text-align:center">
                     <button style="text-align:center"class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
                   </td>
