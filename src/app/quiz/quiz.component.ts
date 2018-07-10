@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
-import { $, $$ } from 'protractor';
+
+
 
 @Component({
   selector: 'app-quiz',
@@ -12,8 +13,7 @@ import { $, $$ } from 'protractor';
   providers: [QuizService]
 })
 export class QuizComponent implements OnInit {
-
-  color;
+  passThreshold = 2;
   isValid: boolean;
   correctAnswer = true;
   correctAnswers = [];
@@ -33,7 +33,7 @@ export class QuizComponent implements OnInit {
     'richText': false,
     'shuffleQuestions': false,
     'shuffleOptions': false,
-    'showClock': false,
+    'showClock': true,
     'showPager': true,
     'theme': 'none'
   };
@@ -91,8 +91,13 @@ export class QuizComponent implements OnInit {
   }
 
   onSelect(question: Question, option: Option) {
+    // This gives the option to only select 1 answer or multiple answers.
+    // For questionTypeId = 1 there is only one answer that can me selected
+    // For questionTypeId = 0 there can be multiple answers selected
     if (question.questionTypeId === 1) {
       question.options.forEach((x) => { if (x.id !== option.id) {x.selected = false; } });
+    } else if (question.questionTypeId === 0) {
+      question.options.forEach((x) => { if (x.id !== option.id && x.selected !== true) {x.selected = false; } });
     }
 
     if (this.config.autoMove) {
@@ -111,28 +116,22 @@ export class QuizComponent implements OnInit {
     return question.options.find(x => x.selected) ? 'Answered' : 'Not Answered';
   }
 
+
   isCorrect(question: Question) {
-    return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
+    // this returns if the question is correct or answered wrong
+    return question.options.every(x => x.isAnswer === x.selected) ? 'correct' : 'wrong';
   }
 
   correctSelected(isAnswer: any, selected: any) {
-    // let isAnswer;
-    // let id;
-    // question.options.every(x => (id = x.id));
-    // question.options.every(x => (isAnswer = x.isAnswer));
-    // // console.log(question.options.every(x => x.isAnswer === true) ? 'correct' : 'wrong');
-        if (isAnswer && selected) {
+        if (isAnswer === true && selected === true) {
           return 'alert-success';
-        } else if (isAnswer === true && selected === false) {
+        } else if (isAnswer === true && selected === false || selected === 'undefined') {
           return 'alert-warning';
         } else if (isAnswer === false && selected === true) {
           return 'alert-danger';
         } else {
           return 'alert-default';
         }
-
-    // console.log(test);
-    // return question.options.every(x => x.isAnswer === this.correctAnswer) ? 'correct' : 'wrong';
   }
 
   onSubmit() {
@@ -161,19 +160,10 @@ export class QuizComponent implements OnInit {
 
   setColor() {
     const value = this.getCorrectPercentage();
-    if (value > 2) {
-      this.isValid = true;
+    if (value > this.passThreshold) {
+      return 'true';
     } else {
-      this.isValid = false ;
-    }
-  }
-
-  selectColor() {
-    const value = this.getCorrectPercentage();
-    if (value > 2) {
-      this.color = 'green';
-    } else {
-      this.color = 'red' ;
+      return 'false' ;
     }
   }
 
@@ -183,4 +173,15 @@ export class QuizComponent implements OnInit {
     this.results = [];
     this.loadQuiz(this.quizName);
   }
+
+  passedOrFailed() {
+    if (this.getCorrectPercentage() > this.passThreshold) {
+      return 'PASSED';
+    } else {
+      return 'FAILED';
+    }
+  }
+
 }
+
+

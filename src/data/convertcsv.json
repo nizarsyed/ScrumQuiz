@@ -2,11 +2,24 @@
   "id": 4,
   "name": "Scrum Quiz",
   "description": "Scrum",
+  "config": {
+    "allowBack": true,
+    "allowReview": true,
+    "autoMove": true,
+    "pageSize": 100,
+    "requiredAll": false,
+    "richText": false,
+    "shuffleQuestions": false,
+    "shuffleOptions": false,
+    "showClock": true,
+    "showPager": true,
+    "theme": "none"
+  },
   "questions":[
  {
    "id": 1010,
    "name": " The purpose of a Sprint is to have a working increment of product done before the Sprint Review.",
-   "questionTypeId": 1,
+   "questionTypeId":1,
    "options": [
       {
          "id": 1055,
@@ -73,7 +86,7 @@
          "id": 1061,
          "questionId": 1010,
          "name": " Sprint 0",
-         "isAnswer": false
+         "isAnswer": true
       }
    ],
    "questionType": {

@@ -58,13 +58,15 @@
                   <th scope="col"></th>
                 </tr>
                 <tr>
-                  <td>{{getCorrectCount()}}</td>
-                  <td>{{getWrongCount()}}</td>
-                  {{selectColor()}}
-                  <td bgcolor="color;">{{getCorrectPercentage()}}</td>
-                  <td>
-                    <button class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
+                  <td style="text-align:center">{{getCorrectCount()}}</td>
+                  <td style="text-align:center">{{getWrongCount()}}</td>
+                  <td style="text-align:center" class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" >{{getCorrectPercentage()}}</td>
+                  <td style="text-align:center">
+                    <button style="text-align:center"class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
                   </td>
+                </tr>
+                <tr>
+                  <th class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" style="text-align:center; font-size: 200%" colspan="4">{{passedOrFailed()}}</th>
                 </tr>
           </table>
         </div>
@@ -75,8 +77,6 @@
         <h5>{{index + 1}}. {{question.name}}</h5>
         <div class="row">
           <div class="col-6" *ngFor="let Option of question.options">
-            <!-- <div class="p-1 m-2 alert {{Option.isAnswer ? 'alert-warning': 'alert-danger'}}"> -->
-
             <div class="p-1 m-2 alert {{correctSelected(Option.isAnswer, Option.selected)}}">
             <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected"/> {{Option.name}}
             </div>
