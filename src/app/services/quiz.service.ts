@@ -14,7 +14,10 @@ export class QuizService {
 
   getAll() {
     return [
-      { id: 'data/convertcsv.json', name: 'Scrum' }
+      { id: 'data/scrum_test01.json', name: 'Scrum Test 1' },
+      { id: 'data/aspnet.json', name: 'aspnet' },
+      { id: 'data/csharp.json', name: 'csharp' },
+      { id: 'data/designPatterns.json', name: 'Design Patterns' }
 
     ];
   }
