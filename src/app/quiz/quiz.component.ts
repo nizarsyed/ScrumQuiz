@@ -172,6 +172,7 @@ export class QuizComponent implements OnInit {
     this.correctAnswers = [];
     this.results = [];
     this.loadQuiz(this.quizName);
+    this.goTo(this.pager.index = 0);
   }
 
   passedOrFailed() {
