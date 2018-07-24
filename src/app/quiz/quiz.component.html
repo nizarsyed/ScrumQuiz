@@ -1,19 +1,32 @@
+<!-- header of page -->
 <div class="row">
   <div class="col-6">
     <h3>Quiz Application</h3>
   </div>
-  <div class="col-6 text-right">
+</div>
+<!-- end of header of page -->
+
+<!-- quiz selector page -->
+<div id="quizSelector" *ngIf="mode=='quizSelector'">
+  <hr/>
+  <div class="col-12 text-center">Welcome to this quiz application. Please select your quiz to start with the test.</div>
+  <hr/>
+  <div class="col-12 text-center">
     Select Quiz:
-    <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
-      <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
+    <select onfocus="this.value=''" [(ngModel)]="quizName" (change)="buttonDisabled=false" >
+      <option *ngFor="let quiz of quizes" [value]="quiz.id" >{{quiz.name}}</option>
     </select>
   </div>
+  <div class="col-12 text-center"><button class="btn btn-default"  (click)="loadQuiz(quizName);" [disabled]="buttonDisabled">Start Quiz</button></div>
+  <hr/>
 </div>
-<div id="quiz">
-  <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
-  <hr />
+<!-- quiz selector page end -->
 
+<!-- quiz pages -->
   <div *ngIf="mode=='quiz' && quiz">
+      <div id="quiz">
+          <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
+          <hr />
     <div *ngFor="let question of filteredQuestions;">
       <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
       <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
@@ -39,30 +52,36 @@
       <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
     </div>
   </div>
+  <hr />
+</div>
+<!-- end of quiz pages -->
 
-  <div class="row text-center" *ngIf="mode=='review'">
+<!-- review questions page -->
+<div class="row text-center" *ngIf="mode=='review'">
     <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
       <div (click)="goTo(index)" class="p-3 mb-2 {{ isAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ isAnswered(question) }}</div>
     </div>
   </div>
-  <div class="result" *ngIf="mode=='result'">
+<!-- end of review questions page -->
+
+<!-- result page -->
+<div class="result" *ngIf="mode=='result'">
     <h2>Quiz Result</h2>
-
-
       <div class="table-responsive-sm">
           <table class="table">
               <tr>
                   <th scope="col">Correct Answers</th>
                   <th scope="col">Wrong Answers</th>
                   <th scope="col">Correct Percentage</th>
-                  <th scope="col"></th>
+                  <th scope="col">Pass Threshold = {{getPassThresHold()}} %</th>
                 </tr>
                 <tr>
                   <td style="text-align:center">{{getCorrectCount()}}</td>
                   <td style="text-align:center">{{getWrongCount()}}</td>
                   <td style="text-align:center" class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" >{{getCorrectPercentage()}} %</td>
                   <td style="text-align:center">
-                    <button style="text-align:center"class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
+                    <button class="btn-sm btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
+                    <button class="btn-sm btn-default"  (click)="mode='quizSelector';gotoSelector();">Select Quiz</button>
                   </td>
                 </tr>
                 <tr>
@@ -70,9 +89,7 @@
                 </tr>
           </table>
         </div>
-
     <div *ngFor="let question of quiz.questions; let index = index">
-
       <div class="result-question">
         <h5>{{index + 1}}. {{question.name}}</h5>
         <div class="row">
@@ -87,11 +104,16 @@
     </div>
     <h4 class="alert alert-info text-center"> You may close this window now. </h4>
   </div>
-  <hr />
-  <div *ngIf="mode!='result'">
-    <button class="btn btn-default" (click)="mode = 'quiz'">Quiz</button>
-    <button class="btn btn-info" (click)="mode = 'review'">Review</button>
-    <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
-    <button class="btn btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
+<!-- end of result page -->
+
+<!-- show buttons, except for quizSelector and result pages -->
+<div *ngIf="mode!='quizSelector'">
+  <div class="col-12" align="center" *ngIf="mode!='result'">
+      <button *ngIf="mode!='review'" class="btn btn-info" (click)="mode='review'">Review</button>
+      <button *ngIf="mode=='review'" class="btn btn-default" (click)="mode='quiz'">Back to Quiz</button>
+      <button class="btn btn-primary" (click)="onSubmit();mode='result'">Submit Quiz</button>
+      <button class="btn btn-default"  (click)="mode='quiz';clearAll();">Restart Quiz</button>
+      <button class="btn btn-default"  (click)="mode='quizSelector';gotoSelector();">Select Quiz</button>
+    </div>
   </div>
-</div>
+<!-- end of show buttons, except for quizSelector and result pages -->

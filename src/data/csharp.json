@@ -8,6 +8,7 @@
         "allowBack": true,
         "autoMove": true
     },
+    "passThresHold": 60,
     "questions": [
         {
             "id": 1010,

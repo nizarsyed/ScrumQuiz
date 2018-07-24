@@ -2,6 +2,7 @@
     "id": 1,
     "name": "Asp.Net Quiz",
     "description": "Asp.Net Quiz (contains webform, mvc, web API, etc.)",
+    "passThresHold": 60,
     "questions": [
         {
             "id": 1010,

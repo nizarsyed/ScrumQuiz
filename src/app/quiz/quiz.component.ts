@@ -13,7 +13,7 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   providers: [QuizService]
 })
 export class QuizComponent implements OnInit {
-  passThreshold = 2;
+  buttonDisabled = true;
   isValid: boolean;
   correctAnswer = true;
   correctAnswers = [];
@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   correctCount = 0;
   quizes: any[];
   quiz: Quiz = new Quiz(null);
-  mode = 'quiz';
+  mode = 'quizSelector';
   quizName: string;
   config: QuizConfig = {
     'allowBack': true,
@@ -53,8 +53,8 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[0].id;
-    this.loadQuiz(this.quizName);
+    // this.quizName = this.quizes[0].id;
+    // this.loadQuiz(this.quizName);
   }
 
   loadQuiz(quizName: string) {
@@ -66,6 +66,9 @@ export class QuizComponent implements OnInit {
       this.duration = this.parseTime(this.config.duration);
     });
     this.mode = 'quiz';
+
+
+
   }
 
   tick() {
@@ -160,7 +163,7 @@ export class QuizComponent implements OnInit {
 
   setColor() {
     const value = this.getCorrectPercentage();
-    if (value > this.passThreshold) {
+    if (value > this.quiz.passThresHold) {
       return 'true';
     } else {
       return 'false' ;
@@ -176,13 +179,27 @@ export class QuizComponent implements OnInit {
   }
 
   passedOrFailed() {
-    if (this.getCorrectPercentage() > this.passThreshold) {
+    if (this.getCorrectPercentage() > this.quiz.passThresHold) {
       return 'PASSED';
     } else {
       return 'FAILED';
     }
   }
 
+  getPassThresHold() {
+    return this.quiz.passThresHold;
+  }
+
+  gotoSelector() {
+    this.correctCount = 0;
+    this.correctAnswers = [];
+    this.results = [];
+    this.loadQuiz(this.quizName);
+    this.goTo(this.pager.index = 0);
+    this.mode = 'quizSelector';
+  }
+
+
+
+
 }
-
-

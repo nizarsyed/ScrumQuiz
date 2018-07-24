@@ -2,6 +2,7 @@
     "id": 3,
     "name": "Design Patterns",
     "description": "Design Patterns Quiz including solid principles.",
+    "passThresHold": 60,
     "questions": [
         {
             "id": 1010,

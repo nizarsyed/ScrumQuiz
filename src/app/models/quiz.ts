@@ -7,6 +7,7 @@ export class Quiz {
     description: string;
     config: QuizConfig;
     questions: Question[];
+    passThresHold: number;
 
     constructor(data: any) {
         if (data) {
@@ -14,10 +15,12 @@ export class Quiz {
             this.name = data.name;
             this.description = data.description;
             this.config = new QuizConfig(data.config);
+            this.passThresHold = data.passThresHold;
             this.questions = [];
             data.questions.forEach(q => {
                 this.questions.push(new Question(q));
             });
+
         }
     }
 }

@@ -16,6 +16,7 @@
     "showPager": true,
     "theme": "none"
   },
+  "passThresHold": 5,
   "questions":[
  {
    "id": 1010,
