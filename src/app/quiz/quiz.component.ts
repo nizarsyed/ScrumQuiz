@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
-
-
 
 @Component({
   selector: 'app-quiz',
@@ -12,6 +9,7 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   styleUrls: ['./quiz.component.css'],
   providers: [QuizService]
 })
+
 export class QuizComponent implements OnInit {
   buttonDisabled = true;
   isValid: boolean;
@@ -27,7 +25,7 @@ export class QuizComponent implements OnInit {
     'allowBack': true,
     'allowReview': true,
     'autoMove': false,  // if true, it will move to next question automatically when answered.
-    'duration': 3600,  // indicates the time (in secs) in which quiz needs to be completed. 0 means unlimited.
+    'duration': 10,  // indicates the time (in secs) in which quiz needs to be completed. 0 means unlimited.
     'pageSize': 1,
     'requiredAll': false,  // indicates if you must answer all the questions before submitting.
     'richText': false,
@@ -48,6 +46,8 @@ export class QuizComponent implements OnInit {
   endTime: Date;
   ellapsedTime = '00:00';
   duration = '';
+  storedDiff = 0;
+  paused = false;
 
   constructor(private quizService: QuizService) { }
 
@@ -57,27 +57,112 @@ export class QuizComponent implements OnInit {
     // this.loadQuiz(this.quizName);
   }
 
+
+  checkConfig(jsonConfig: any) {
+    if (typeof jsonConfig !== 'undefined') {
+      return true;
+    }
+  }
+
+  updateConfig() {
+    // for(let _i; _i < config.size )
+
+    if (this.checkConfig(this.quiz.config.allowBack)) {
+      this.config.allowBack = this.quiz.config.allowBack;
+    }
+
+    if (this.checkConfig(this.quiz.config.allowReview)) {
+      this.config.allowReview = this.quiz.config.allowReview;
+    }
+
+    if (this.checkConfig(this.quiz.config.autoMove)) {
+      this.config.autoMove = this.quiz.config.autoMove;
+    }
+
+    if (this.checkConfig(this.quiz.config.duration)) {
+      this.config.duration = this.quiz.config.duration;
+    }
+
+    if (this.checkConfig(this.quiz.config.pageSize)) {
+      this.config.allowBack = this.quiz.config.allowBack;
+    }
+
+    if (this.checkConfig(this.quiz.config.allowBack)) {
+      this.config.pageSize = this.quiz.config.pageSize;
+    }
+
+    if (this.checkConfig(this.quiz.config.requiredAll)) {
+      this.config.requiredAll = this.quiz.config.requiredAll;
+    }
+
+    if (this.checkConfig(this.quiz.config.richText)) {
+      this.config.richText = this.quiz.config.richText;
+    }
+
+    if (this.checkConfig(this.quiz.config.showClock)) {
+      this.config.showClock = this.quiz.config.showClock;
+    }
+
+    if (this.checkConfig(this.quiz.config.showPager)) {
+      this.config.showPager = this.quiz.config.showPager;
+    }
+
+    if (this.checkConfig(this.quiz.config.shuffleOptions)) {
+      this.config.shuffleOptions = this.quiz.config.shuffleOptions;
+    }
+
+    if (this.checkConfig(this.quiz.config.shuffleQuestions)) {
+      this.config.shuffleQuestions = this.quiz.config.shuffleQuestions;
+    }
+
+    if (this.checkConfig(this.quiz.config.theme)) {
+      this.config.theme = this.quiz.config.theme;
+    }
+  }
+
   loadQuiz(quizName: string) {
     this.quizService.get(quizName).subscribe(res => {
       this.quiz = new Quiz(res);
+      this.updateConfig();
+      console.log(this.config.duration);
       this.pager.count = this.quiz.questions.length;
       this.startTime = new Date();
       this.timer = setInterval(() => { this.tick(); }, 1000);
       this.duration = this.parseTime(this.config.duration);
     });
     this.mode = 'quiz';
-
-
-
   }
 
   tick() {
     const now = new Date();
-    const diff = (now.getTime() - this.startTime.getTime()) / 1000;
-    if (diff >= this.config.duration) {
+    // this.storedDiff = (now.getTime() - this.startTime.getTime()) / 1000;
+    if (this.storedDiff >= this.config.duration) {
+      clearInterval(this.timer);
+      this.ellapsedTime = '00:00';
       this.onSubmit();
     }
-    this.ellapsedTime = this.parseTime(diff);
+    this.storedDiff++;
+    this.ellapsedTime = this.parseTime(this.storedDiff);
+  }
+
+  pauseResumeCall() {
+    console.log(this.paused);
+    if (this.paused) {
+      this.continueTimer();
+    } else {
+      this.pauseTimer();
+    }
+  }
+
+  pauseTimer() {
+    console.log(this.timer);
+    clearInterval(this.timer);
+    this.paused = true;
+  }
+
+  continueTimer() {
+    this.timer = setInterval(() => { this.tick(); }, 1000);
+    this.paused = false;
   }
 
   parseTime(totalSeconds: number) {
@@ -119,7 +204,6 @@ export class QuizComponent implements OnInit {
     return question.options.find(x => x.selected) ? 'Answered' : 'Not Answered';
   }
 
-
   isCorrect(question: Question) {
     // this returns if the question is correct or answered wrong
     return question.options.every(x => x.isAnswer === x.selected) ? 'correct' : 'wrong';
@@ -130,7 +214,7 @@ export class QuizComponent implements OnInit {
           return 'alert-success';
         } else if (isAnswer === true && selected === false || selected === 'undefined') {
           return 'alert-warning';
-        } else if (isAnswer === false && selected === true) {
+        } else if ((isAnswer === false && selected === true)) {
           return 'alert-danger';
         } else {
           return 'alert-default';
@@ -138,6 +222,8 @@ export class QuizComponent implements OnInit {
   }
 
   onSubmit() {
+    clearInterval(this.timer);
+    this.ellapsedTime = '00:00';
     const answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
     // Post your data to the server here. answers contains the questionId and the users' answer.
@@ -146,6 +232,7 @@ export class QuizComponent implements OnInit {
     this.results.forEach((x) => {if (x === 'correct')  {this.correctCount = this.correctCount + 1; } }) ;
     console.log(this.results);
     this.mode = 'result';
+    this.storedDiff = 0;
   }
 
   getCorrectCount() {
@@ -171,11 +258,21 @@ export class QuizComponent implements OnInit {
   }
 
   clearAll() {
+    clearInterval(this.timer);
+    this.buttonDisabled = true;
+    this.correctAnswer = true;
+    this.results = [];
+    this.timer = null;
+    this.ellapsedTime = '00:00';
+    this.duration = '';
+    this.paused = false;
+    this.storedDiff = 0;
     this.correctCount = 0;
     this.correctAnswers = [];
     this.results = [];
     this.loadQuiz(this.quizName);
     this.goTo(this.pager.index = 0);
+    this.mode = 'quiz';
   }
 
   passedOrFailed() {
@@ -191,15 +288,20 @@ export class QuizComponent implements OnInit {
   }
 
   gotoSelector() {
+    clearInterval(this.timer);
+    this.buttonDisabled = true;
+    this.correctAnswer = true;
+    this.results = [];
+    this.timer = null;
+    this.ellapsedTime = '00:00';
+    this.duration = '';
+    this.paused = false;
+    this.storedDiff = 0;
     this.correctCount = 0;
     this.correctAnswers = [];
     this.results = [];
-    this.loadQuiz(this.quizName);
     this.goTo(this.pager.index = 0);
     this.mode = 'quizSelector';
+    this.quizName = '';
   }
-
-
-
-
 }

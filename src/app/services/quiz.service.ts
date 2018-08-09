@@ -9,6 +9,7 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   get(url: string) {
+    console.log(this.http.get(url));
     return this.http.get(url);
   }
 

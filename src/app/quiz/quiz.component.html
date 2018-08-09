@@ -1,4 +1,5 @@
-<!-- header of page -->
+
+ <!-- header of page -->
 <div class="row">
   <div class="col-6">
     <h3>Quiz Application</h3>
@@ -29,11 +30,17 @@
           <hr />
     <div *ngFor="let question of filteredQuestions;">
       <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
-      <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
-      <h3 class="font-weight-normal">{{pager.index + 1}}.
+      <div class="badge badge-info float-right">
+
+        <button *ngIf="paused==false" class="btn btn-warning fa fa-pause" (click)="pauseResumeCall();"></button>
+        <button *ngIf="paused==true" class="btn btn-success fa fa-play" (click)="pauseResumeCall();" ></button>
+
+        Time: {{ellapsedTime}} / {{duration}}
+      </div>
+      <h3 *ngIf="paused==false" class="font-weight-normal">{{pager.index + 1}}.
         <span [innerHTML]="question.name"></span>
       </h3>
-      <div class="row text-left options">
+      <div *ngIf="paused==false" class="row text-left options">
         <div class="col-6" *ngFor="let option of question.options">
           <div class="option">
             <label class="font-weight-normal" [attr.for]="option.id">
@@ -43,8 +50,8 @@
         </div>
       </div>
     </div>
-    <hr />
-    <div class="text-center">
+    <hr *ngIf="paused==false" />
+    <div *ngIf="paused==false" class="text-center">
       <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>
       <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
       <button class="btn btn-primary" (click)="goTo(pager.index + 1);">Next</button>
@@ -52,7 +59,7 @@
       <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
     </div>
   </div>
-  <hr />
+  <hr *ngIf="paused==false" />
 </div>
 <!-- end of quiz pages -->
 
@@ -80,8 +87,8 @@
                   <td style="text-align:center">{{getWrongCount()}}</td>
                   <td style="text-align:center" class="alert {{ setColor() == 'true' ? 'alert-success': 'alert-danger'}}" >{{getCorrectPercentage()}} %</td>
                   <td style="text-align:center">
-                    <button class="btn-sm btn-default"  (click)="mode = 'quiz';clearAll();">Restart Quiz</button>
-                    <button class="btn-sm btn-default"  (click)="mode='quizSelector';gotoSelector();">Select Quiz</button>
+                    <button class="btn-sm btn-default"  (click)="mode ='quiz';clearAll();">Restart Quiz</button>
+                    <button class="btn-sm btn-default"  (click)="mode ='quizSelector';gotoSelector();">Select Quiz</button>
                   </td>
                 </tr>
                 <tr>
@@ -107,13 +114,11 @@
 <!-- end of result page -->
 
 <!-- show buttons, except for quizSelector and result pages -->
-<div *ngIf="mode!='quizSelector'">
-  <div class="col-12" align="center" *ngIf="mode!='result'">
-      <button *ngIf="mode!='review'" class="btn btn-info" (click)="mode='review'">Review</button>
-      <button *ngIf="mode=='review'" class="btn btn-default" (click)="mode='quiz'">Back to Quiz</button>
-      <button class="btn btn-primary" (click)="onSubmit();mode='result'">Submit Quiz</button>
-      <button class="btn btn-default"  (click)="mode='quiz';clearAll();">Restart Quiz</button>
-      <button class="btn btn-default"  (click)="mode='quizSelector';gotoSelector();">Select Quiz</button>
-    </div>
-  </div>
-<!-- end of show buttons, except for quizSelector and result pages -->
+<div class="col-12" align="center" *ngIf="mode!='quizSelector' && mode!= 'result' && paused==false">
+  <button *ngIf="mode!='review'" class="btn btn-info" (click)="mode='review'">Review</button>
+  <button *ngIf="mode=='review'" class="btn btn-default" (click)="mode='quiz'">Back to Quiz</button>
+  <button class="btn btn-primary" (click)="onSubmit()">Submit Quiz</button>
+  <button class="btn btn-default"  (click)="clearAll();">Restart Quiz</button>
+  <button class="btn btn-default"  (click)="gotoSelector();">Select Quiz</button>
+</div>
+
